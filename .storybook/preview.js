@@ -1,23 +1,16 @@
 import React from 'react';
-import { buildTheme, resetCss, GlobalCss, ThemeProvider } from '../src';
+import { buildTheme, resetCss, GlobalCss, ThemeProvider } from '@kibalabs/ui-react';
 
-const theme = buildTheme({
+import { buildDropzoneTheme } from '../src';
+
+const baseTheme = buildTheme({
   colors: {
     brandPrimary: '#4b6cb7',
     brandSecondary: '#182848',
   },
-  boxes: {
-    borderColored: {
-      "border-color": '$colors.brandPrimaryClear20',
-      "border-width": '2px'
-    }
-  },
-  texts: {
-    imageCaption: {
-      color: '$colors.textLight80',
-      "font-size": '0.85rem'
-    }
-  }
+});
+const theme = buildTheme({
+  dropzones: buildDropzoneTheme(baseTheme.colors, baseTheme.dimensions, basTheme.texts, baseTheme.boxes),
 });
 
 export const decorators = [
@@ -39,11 +32,6 @@ export const parameters = {
   previewTabs: {
     canvas: {
       hidden: true,
-    },
-  },
-  options: {
-    storySort: {
-      order: ['Introduction', ['Welcome', 'Theming Goals', 'Architecture'], 'Particles', ['Colors', 'Dimensions', 'Fonts'], 'Atoms', 'Molecules', 'Organisms'],
     },
   },
 };
