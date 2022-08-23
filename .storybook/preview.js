@@ -1,7 +1,7 @@
 import React from 'react';
 import { buildTheme, resetCss, GlobalCss, ThemeProvider } from '@kibalabs/ui-react';
 
-import { buildDropzoneTheme } from '../src';
+import { buildDropzoneThemes } from '../src';
 
 const baseTheme = buildTheme({
   colors: {
@@ -10,7 +10,7 @@ const baseTheme = buildTheme({
   },
 });
 const theme = buildTheme({
-  dropzones: buildDropzoneTheme(baseTheme.colors, baseTheme.dimensions, basTheme.texts, baseTheme.boxes),
+  dropzones: buildDropzoneThemes(baseTheme.colors, baseTheme.dimensions, baseTheme.texts, baseTheme.boxes),
 });
 
 export const decorators = [
