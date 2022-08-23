@@ -1,6 +1,6 @@
 {
   "name": "@kibalabs/ui-react-dropzone",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "React UI component for dropzone",
   "license": "MIT",
   "repository": {
