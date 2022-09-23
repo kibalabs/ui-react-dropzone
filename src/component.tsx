@@ -68,6 +68,7 @@ const StyledDropzone = styled.div<IStyledDropzoneProps>`
 export interface IDropzoneProps extends IComponentProps<IDropzoneTheme>, IMultiAnyChildProps {
   onFilesChosen: (files: File[]) => void;
   fileMimeTypes?: string[];
+  fileMimeTypeExtensions?: Record<string, string[]>;
   fileLimit?: number;
 }
 
@@ -78,12 +79,14 @@ export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.onFilesChosen]);
 
-  const { getRootProps, getInputProps, isDragActive } = ReactDropzone.useDropzone({ onDrop,
+  const { getRootProps, getInputProps, isDragActive } = ReactDropzone.useDropzone({
+    onDrop,
     maxFiles: props.fileLimit,
-    accept: (props.fileMimeTypes || ['*/*']).reduce((accumulator: Record<string, string[]>, current: string): Record<string, string[]> => {
+    accept: props.fileMimeTypeExtensions ?? ((props.fileMimeTypes || []).reduce((accumulator: Record<string, string[]>, current: string): Record<string, string[]> => {
       accumulator[current] = [];
       return accumulator;
-    }, {}) });
+    }, {})),
+  });
 
   return (
     <StyledDropzone
