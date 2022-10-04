@@ -13,8 +13,6 @@ interface IStyledDropzoneProps {
 }
 
 const StyledDropzone = styled.div<IStyledDropzoneProps>`
-  ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.text)};
-  ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.background)};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +20,17 @@ const StyledDropzone = styled.div<IStyledDropzoneProps>`
   outline: none;
   cursor: pointer;
   transition-duration: 0.3s;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.fullHeight {
+    height: 100%;
+  }
+
+  ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.text)};
+  ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.background)};
   &:visited {
     ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.text)};
     ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.background)};
@@ -38,7 +47,7 @@ const StyledDropzone = styled.div<IStyledDropzoneProps>`
     ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.focus?.text)};
     ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.focus?.background)};
   }
-  &.isFileHovering {
+  &.fileHovering {
     ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.fileHover?.text)};
     ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.fileHover?.background)};
   }
@@ -58,7 +67,7 @@ const StyledDropzone = styled.div<IStyledDropzoneProps>`
       ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.focus?.text)};
       ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.focus?.background)};
     }
-    &.isFileHovering {
+    &.fileHovering {
       ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.fileHover?.text)};
       ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.fileHover?.background)};
     }
@@ -70,6 +79,8 @@ export interface IDropzoneProps extends IComponentProps<IDropzoneTheme>, IMultiA
   fileMimeTypes?: string[];
   fileMimeTypeExtensions?: Record<string, string[]>;
   fileLimit?: number;
+  isFullHeight?: boolean;
+  isFullWidth?: boolean;
 }
 
 export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
@@ -92,8 +103,10 @@ export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
     <StyledDropzone
       {...getRootProps()}
       id={props.id}
-      className={getClassName(Dropzone.displayName, props.className, isDragActive && 'isFileHovering')}
+      className={getClassName(Dropzone.displayName, props.className, isDragActive && 'fileHovering', props.isFullWidth && 'fullWidth', props.isFullHeight && 'fullHeight')}
       $theme={theme}
+      $isFullHeight={props.isFullHeight}
+      $isFullWidth={props.isFullWidth}
     >
       <input {...getInputProps()} />
       {props.children ? props.children : <KibaIcon iconId='ion-cloud-upload-outline' /> }
