@@ -1,6 +1,6 @@
 {
   "name": "@kibalabs/ui-react-dropzone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React UI component for dropzone",
   "license": "MIT",
   "repository": {
@@ -28,24 +28,24 @@
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@kibalabs/core": "^0.5.9",
-    "@kibalabs/core-react": "^0.9.2",
-    "@kibalabs/ui-react": "^0.9.9",
+    "@kibalabs/core": "^0.5.10",
+    "@kibalabs/core-react": "^0.9.3",
+    "@kibalabs/ui-react": "^0.10.0",
     "react-dropzone": "^14.2.2"
   },
   "devDependencies": {
-    "@kibalabs/build": "^0.9.0",
-    "@storybook/addon-essentials": "6.5.10",
-    "@storybook/addon-links": "6.5.10",
-    "@storybook/builder-webpack5": "6.5.10",
-    "@storybook/manager-webpack5": "6.5.10",
-    "@storybook/react": "6.5.10",
-    "@types/react": "18.0.17",
+    "@kibalabs/build": "^0.10.0",
+    "@storybook/addon-essentials": "6.5.12",
+    "@storybook/addon-links": "6.5.12",
+    "@storybook/builder-webpack5": "6.5.12",
+    "@storybook/manager-webpack5": "6.5.12",
+    "@storybook/react": "6.5.12",
+    "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "5.3.5"
+    "styled-components": "5.3.6"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 ",
