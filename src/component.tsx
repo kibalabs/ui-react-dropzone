@@ -1,15 +1,60 @@
 import React from 'react';
 
-import { getClassName } from '@kibalabs/core';
+import { getClassName, RecursivePartial } from '@kibalabs/core';
 import { IMultiAnyChildProps } from '@kibalabs/core-react';
-import { IComponentProps, KibaIcon, themeToCss, useBuiltTheme } from '@kibalabs/ui-react';
+import { IComponentProps, KibaIcon, themeToCss } from '@kibalabs/ui-react';
 import * as ReactDropzone from 'react-dropzone';
 import styled from 'styled-components';
 
 import { IDropzoneTheme } from './theme';
 
+export const DropzoneThemedStyle = (theme: RecursivePartial<IDropzoneTheme>): string => `
+  ${themeToCss(theme.normal?.default?.text)};
+  ${themeToCss(theme.normal?.default?.background)};
+  &:visited {
+    ${themeToCss(theme.normal?.default?.text)};
+    ${themeToCss(theme.normal?.default?.background)};
+  }
+  &:hover {
+    ${themeToCss(theme.normal?.hover?.text)};
+    ${themeToCss(theme.normal?.hover?.background)};
+  }
+  &:active {
+    ${themeToCss(theme.normal?.press?.text)};
+    ${themeToCss(theme.normal?.press?.background)};
+  }
+  &:focus {
+    ${themeToCss(theme.normal?.focus?.text)};
+    ${themeToCss(theme.normal?.focus?.background)};
+  }
+  &.fileHovering {
+    ${themeToCss(theme.normal?.fileHover?.text)};
+    ${themeToCss(theme.normal?.fileHover?.background)};
+  }
+  &.disabled {
+    ${themeToCss(theme.normal?.default?.text)};
+    ${themeToCss(theme.normal?.default?.background)};
+    &:hover {
+      ${themeToCss(theme.disabled?.hover?.text)};
+      ${themeToCss(theme.disabled?.hover?.background)};
+    }
+    &:active {
+      ${themeToCss(theme.disabled?.press?.text)};
+      ${themeToCss(theme.disabled?.press?.background)};
+    }
+    &:focus {
+      ${themeToCss(theme.disabled?.focus?.text)};
+      ${themeToCss(theme.disabled?.focus?.background)};
+    }
+    &.fileHovering {
+      ${themeToCss(theme.disabled?.fileHover?.text)};
+      ${themeToCss(theme.disabled?.fileHover?.background)};
+    }
+  }
+`;
+
 interface IStyledDropzoneProps {
-  $theme: IDropzoneTheme;
+  $theme?: RecursivePartial<IDropzoneTheme>;
 }
 
 const StyledDropzone = styled.div<IStyledDropzoneProps>`
@@ -24,54 +69,17 @@ const StyledDropzone = styled.div<IStyledDropzoneProps>`
   &.fullWidth {
     width: 100%;
   }
-
   &.fullHeight {
     height: 100%;
   }
-
-  ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.text)};
-  ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.background)};
-  &:visited {
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.text)};
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.background)};
-  }
-  &:hover {
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.hover?.text)};
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.hover?.background)};
-  }
-  &:active {
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.press?.text)};
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.press?.background)};
-  }
-  &:focus {
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.focus?.text)};
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.focus?.background)};
-  }
-  &.fileHovering {
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.fileHover?.text)};
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.fileHover?.background)};
-  }
   &.disabled {
     cursor: not-allowed;
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.text)};
-    ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.normal.default.background)};
-    &:hover {
-      ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.hover?.text)};
-      ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.hover?.background)};
-    }
-    &:active {
-      ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.press?.text)};
-      ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.press?.background)};
-    }
-    &:focus {
-      ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.focus?.text)};
-      ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.focus?.background)};
-    }
-    &.fileHovering {
-      ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.fileHover?.text)};
-      ${(props: IStyledDropzoneProps): string => themeToCss(props.$theme.disabled.fileHover?.background)};
-    }
   }
+
+  && {
+    ${(props: IStyledDropzoneProps): string => (props.$theme ? DropzoneThemedStyle(props.$theme) : '')};
+  }
+
 `;
 
 export interface IDropzoneProps extends IComponentProps<IDropzoneTheme>, IMultiAnyChildProps {
@@ -84,7 +92,6 @@ export interface IDropzoneProps extends IComponentProps<IDropzoneTheme>, IMultiA
 }
 
 export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
-  const theme = useBuiltTheme('dropzones', props.variant, props.theme);
   const onDrop = React.useCallback((files: File[]) => {
     props.onFilesChosen(files);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -104,7 +111,7 @@ export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
       {...getRootProps()}
       id={props.id}
       className={getClassName(Dropzone.displayName, props.className, isDragActive && 'fileHovering', props.isFullWidth && 'fullWidth', props.isFullHeight && 'fullHeight')}
-      $theme={theme}
+      $theme={props.theme}
       $isFullHeight={props.isFullHeight}
       $isFullWidth={props.isFullWidth}
     >
@@ -113,4 +120,4 @@ export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
     </StyledDropzone>
   );
 };
-Dropzone.displayName = 'Dropzone';
+Dropzone.displayName = 'KibaDropzone';

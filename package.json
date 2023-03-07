@@ -9,43 +9,32 @@
   },
   "homepage": "https://ui-react-dropzone-docs.kibalabs.com",
   "bugs": "https://github.com/kibalabs/ui-react-dropzone/issues",
-  "scripts": {
-    "build": "build-react-component",
-    "start": "build-react-component --start",
-    "start-dev": "build-react-component --start --dev",
-    "clean": "rm -rf ./node_modules ./package-lock.json ./dist",
-    "lint": "lint",
-    "lint-fix": "lint --fix",
-    "type-check": "type-check",
-    "publish-next": "kiba-publish --next",
-    "docs": "start-storybook --static-dir ./.storybook/public --docs --port 6006",
-    "build-docs": "build-storybook --static-dir ./.storybook/public --docs --output-dir dist"
-  },
-  "files": [
-    "dist/*"
-  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
+  "files": [
+    "dist/*"
+  ],
   "dependencies": {
-    "@kibalabs/core": "^0.5.10",
+    "@kibalabs/core": "^0.5.11-next.1",
     "@kibalabs/core-react": "^0.9.3",
-    "@kibalabs/ui-react": "^0.10.0",
-    "react-dropzone": "^14.2.2"
+    "@kibalabs/ui-react": "^0.11.0-next.18",
+    "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
-    "@kibalabs/build": "^0.10.0",
-    "@storybook/addon-essentials": "6.5.12",
-    "@storybook/addon-links": "6.5.12",
-    "@storybook/builder-webpack5": "6.5.12",
-    "@storybook/manager-webpack5": "6.5.12",
-    "@storybook/react": "6.5.12",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
+    "@babel/preset-env": "^7.20.2",
+    "@kibalabs/build": "0.12.1-next.5",
+    "@storybook/addon-essentials": "7.0.0-beta.62",
+    "@storybook/addon-links": "7.0.0-beta.62",
+    "@storybook/react": "7.0.0-beta.62",
+    "@storybook/react-webpack5": "7.0.0-beta.62",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
     "@types/styled-components": "5.1.26",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "5.3.6"
+    "storybook": "^7.0.0-beta.62",
+    "styled-components": "5.3.8"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 ",
