@@ -10,13 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Added
 
 ### Changed
+- [MAJOR] Update to work with ui-react v0.11.0 and above
 
 ### Removed
 
 ## [0.1.1] - 2022-10-11
 
 ### Changed
--[MINOR] Added `fileMimeTypeExtensions` to `Dropzone` props to allow specifying extensions
--[MINOR] Added `isFullHeight` and `isFullWidth to `Dropzone` props
+- [MINOR] Added `fileMimeTypeExtensions` to `Dropzone` props to allow specifying extensions
+- [MINOR] Added `isFullHeight` and `isFullWidth to `Dropzone` props
 
 ## [0.1.0] - 2022-08-23

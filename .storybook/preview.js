@@ -1,21 +1,22 @@
 import React from 'react';
-import { buildTheme, resetCss, GlobalCss, ThemeProvider } from '@kibalabs/ui-react';
+import { buildTheme, resetCss, GlobalCss, ThemeProvider, ComponentDefinition } from '@kibalabs/ui-react';
 
-import { buildDropzoneThemes } from '../src';
+import { buildDropzoneThemes, Dropzone, DropzoneThemedStyle } from '../src';
 
-const baseTheme = buildTheme({
+const theme = buildTheme({
   colors: {
     brandPrimary: '#4b6cb7',
     brandSecondary: '#182848',
   },
 });
-const theme = buildTheme({
-  dropzones: buildDropzoneThemes(baseTheme.colors, baseTheme.dimensions, baseTheme.texts, baseTheme.boxes),
-});
-
+const dropzoneComponentDefinition = {
+  component: Dropzone,
+  themeMap: buildDropzoneThemes(theme.colors, theme.dimensions, theme.texts, theme.boxes),
+  themeCssFunction: DropzoneThemedStyle,
+}
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} extraComponentDefinitions={[dropzoneComponentDefinition]}>
       <GlobalCss
         theme={theme}
         resetCss={resetCss}
