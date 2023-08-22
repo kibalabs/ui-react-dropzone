@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-deploy-beta
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   deploy-package-next:
     runs-on: ubuntu-latest
