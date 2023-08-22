@@ -1,6 +1,6 @@
 {
   "name": "@kibalabs/ui-react-dropzone",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React UI component for dropzones",
   "license": "MIT",
   "repository": {
@@ -17,12 +17,12 @@
   ],
   "dependencies": {
     "@kibalabs/core": "^0.6.1",
-    "@kibalabs/core-react": "^0.9.4",
+    "@kibalabs/core-react": "^0.9.5",
     "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
-    "@kibalabs/build": "0.13.1-next.2",
-    "@kibalabs/ui-react": "0.11.1-next.7",
+    "@kibalabs/build": "0.13.1",
+    "@kibalabs/ui-react": "0.11.1",
     "@storybook/addon-essentials": "7.3.2",
     "@storybook/addon-links": "7.3.2",
     "@storybook/react": "7.3.2",
@@ -37,7 +37,7 @@
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
-    "@kibalabs/ui-react": "0.11.1-next.7",
+    "@kibalabs/ui-react": "^0.11.1",
     "styled-components": "^6.0.7"
   }
 }

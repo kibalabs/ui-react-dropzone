@@ -13,6 +13,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Removed
 
+## [0.2.1] - 2023-08-22
+
+### Changed
+- [MINOR] Update to work with ui-react v0.11.1 and above
+
 ## [0.2.0] - 2023-05-16
 
 ### Changed
