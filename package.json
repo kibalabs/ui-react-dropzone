@@ -18,11 +18,11 @@
   "dependencies": {
     "@kibalabs/core": "^0.6.1",
     "@kibalabs/core-react": "^0.9.4",
-    "@kibalabs/ui-react": "0.11.1-next.7",
     "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
     "@kibalabs/build": "0.13.1-next.2",
+    "@kibalabs/ui-react": "0.11.1-next.7",
     "@storybook/addon-essentials": "7.3.2",
     "@storybook/addon-links": "7.3.2",
     "@storybook/react": "7.3.2",
