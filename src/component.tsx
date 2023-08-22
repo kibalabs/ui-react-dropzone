@@ -112,8 +112,6 @@ export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
       id={props.id}
       className={getClassName(Dropzone.displayName, props.className, isDragActive && 'fileHovering', props.isFullWidth && 'fullWidth', props.isFullHeight && 'fullHeight')}
       $theme={props.theme}
-      $isFullHeight={props.isFullHeight}
-      $isFullWidth={props.isFullWidth}
     >
       <input {...getInputProps()} />
       {props.children ? props.children : <KibaIcon iconId='ion-cloud-upload-outline' /> }
