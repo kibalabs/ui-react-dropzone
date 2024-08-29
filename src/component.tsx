@@ -91,7 +91,7 @@ export interface IDropzoneProps extends IComponentProps<IDropzoneTheme>, IMultiA
   isFullWidth?: boolean;
 }
 
-export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
+export function Dropzone(props: IDropzoneProps): React.ReactElement {
   const onDrop = React.useCallback((files: File[]) => {
     props.onFilesChosen(files);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -108,14 +108,16 @@ export const Dropzone = (props: IDropzoneProps): React.ReactElement => {
 
   return (
     <StyledDropzone
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...getRootProps()}
       id={props.id}
       className={getClassName(Dropzone.displayName, props.className, isDragActive && 'fileHovering', props.isFullWidth && 'fullWidth', props.isFullHeight && 'fullHeight')}
       $theme={props.theme}
     >
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <input {...getInputProps()} />
       {props.children ? props.children : <KibaIcon iconId='ion-cloud-upload-outline' /> }
     </StyledDropzone>
   );
-};
+}
 Dropzone.displayName = 'KibaDropzone';
