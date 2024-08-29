@@ -10,9 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Added
 
 ### Changed
-- [MINOR] Update dependencies
 
 ### Removed
+
+## [0.2.1] - 2023-08-22
+
+### Changed
+- [MINOR] Update to work with ui-react v0.11.2 and above
+- [MINOR] Update dependencies
 
 ## [0.2.1] - 2023-08-22
 
