@@ -5,41 +5,41 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kibalabs/ui-react-dropzone.git"
+    "url": "git+https://github.com/kibalabs/ui-react-dropzone.git"
   },
   "homepage": "https://ui-react-dropzone-docs.kibalabs.com",
   "bugs": "https://github.com/kibalabs/ui-react-dropzone/issues",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
     "dist/*"
   ],
   "dependencies": {
-    "@kibalabs/core": "^0.6.2",
-    "@kibalabs/core-react": "^0.9.6",
+    "@kibalabs/core": "^0.6.3-next.4",
+    "@kibalabs/core-react": "^0.9.7-next.1",
     "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
-    "@kibalabs/build": "0.13.2",
-    "@kibalabs/ui-react": "0.11.2",
-    "@storybook/addon-essentials": "8.2.9",
-    "@storybook/addon-links": "8.2.9",
-    "@storybook/addon-webpack5-compiler-babel": "3.0.3",
-    "@storybook/blocks": "^8.2.9",
-    "@storybook/react": "8.2.9",
-    "@storybook/react-webpack5": "8.2.9",
+    "@kibalabs/build": "0.13.3-next.5",
+    "@kibalabs/ui-react": "0.11.3-next.8",
+    "@storybook/addon-essentials": "8.5.5",
+    "@storybook/addon-links": "8.5.5",
+    "@storybook/blocks": "8.5.5",
+    "@storybook/react": "8.5.5",
+    "@storybook/react-vite": "^8.5.5",
     "@types/react": "18.3.4",
     "@types/react-dom": "18.3.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "storybook": "8.2.9",
-    "styled-components": "6.1.12"
+    "storybook": "8.5.5",
+    "styled-components": "6.1.15"
   },
   "peerDependencies": {
-    "@kibalabs/ui-react": "^0.11.2",
+    "@kibalabs/ui-react": "^0.11.2 || 0.11.3-next.*",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
-    "styled-components": "^6.1.12"
+    "styled-components": "^6.1.15"
   }
 }

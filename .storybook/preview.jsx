@@ -1,5 +1,5 @@
 import React from 'react';
-import { buildTheme, resetCss, GlobalCss, ThemeProvider, ComponentDefinition } from '@kibalabs/ui-react';
+import { buildTheme, resetCss, GlobalCss, ThemeProvider } from '@kibalabs/ui-react';
 
 import { buildDropzoneThemes, Dropzone, DropzoneThemedStyle } from '../src';
 
