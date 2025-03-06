@@ -4,7 +4,7 @@ import { getClassName, RecursivePartial } from '@kibalabs/core';
 import { IMultiAnyChildProps } from '@kibalabs/core-react';
 import { IComponentProps, KibaIcon, themeToCss } from '@kibalabs/ui-react';
 import * as ReactDropzone from 'react-dropzone';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 import { IDropzoneTheme } from './theme';
 
