@@ -37,7 +37,7 @@
     "styled-components": "6.1.15"
   },
   "peerDependencies": {
-    "@kibalabs/ui-react": ">=0.11.2",
+    "@kibalabs/ui-react": ">=0.11.2 || >=0.11.3-next",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "styled-components": "^6.1.15"
