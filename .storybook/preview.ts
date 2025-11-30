@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react-vite';
-import '@kibalabs/ui-react/styles/reset';
-import '@kibalabs/ui-react/styles/colors';
+import '@kibalabs/ui-react/dist/index.css';
 import '../src/styles.scss';
 
 const preview: Preview = {

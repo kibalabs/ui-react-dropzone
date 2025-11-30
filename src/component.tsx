@@ -13,13 +13,11 @@ export interface IDropzoneProps extends IMultiAnyChildProps {
   fileMimeTypes?: string[];
   fileMimeTypeExtensions?: Record<string, string[]>;
   fileLimit?: number;
-  isFullHeight?: boolean;
-  isFullWidth?: boolean;
   isDisabled?: boolean;
 }
 
 export function Dropzone(props: IDropzoneProps): React.ReactElement {
-  const { onFilesChosen, fileLimit, isDisabled, fileMimeTypeExtensions, fileMimeTypes, id, className, style, isFullWidth, isFullHeight, children } = props;
+  const { onFilesChosen, fileLimit, isDisabled, fileMimeTypeExtensions, fileMimeTypes, id, className, style, children } = props;
   const onDrop = React.useCallback((files: File[]) => {
     onFilesChosen(files);
   }, [onFilesChosen]);
@@ -48,7 +46,7 @@ export function Dropzone(props: IDropzoneProps): React.ReactElement {
       onDragLeave={rootProps.onDragLeave}
       onDrop={rootProps.onDrop}
       id={id}
-      className={getClassName(Dropzone.displayName, className, isDragActive && 'fileHovering', isFullWidth && 'fullWidth', isFullHeight && 'fullHeight', isDisabled && 'disabled')}
+      className={getClassName(Dropzone.displayName, className, isDragActive && 'fileHovering', isDisabled && 'disabled')}
       style={style}
     >
       <input
