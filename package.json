@@ -12,34 +12,33 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.scss",
+    "*.css"
+  ],
   "files": [
     "dist/*"
   ],
   "dependencies": {
     "@kibalabs/core": "^0.6.3-next.4",
-    "@kibalabs/core-react": "^0.9.7-next.1",
+    "@kibalabs/core-react": "^0.9.7-next.2",
     "react-dropzone": "^14.3.8"
   },
   "devDependencies": {
-    "@kibalabs/build": "0.13.3-next.7",
-    "@kibalabs/ui-react": "0.11.3-next.10",
-    "@storybook/addon-essentials": "8.6.4",
-    "@storybook/addon-links": "8.6.4",
-    "@storybook/blocks": "8.6.4",
-    "@storybook/react": "8.6.4",
-    "@storybook/react-vite": "8.6.4",
-    "@types/react": "18.3.4",
-    "@types/react-dom": "18.3.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "storybook": "8.6.4",
-    "styled-components": "6.1.15"
+    "@kibalabs/build": "0.13.3-next.13",
+    "@kibalabs/ui-react": "0.11.3-next.18",
+    "@storybook/addon-docs": "10.1.2",
+    "@storybook/react-vite": "10.1.2",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remark-gfm": "4.0.1",
+    "storybook": "10.1.2"
   },
   "peerDependencies": {
-    "@kibalabs/ui-react": ">=0.11.2 || >=0.11.3-next",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "styled-components": "^6.1.15"
+    "@kibalabs/ui-react": ">=0.11.3-next.18",
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   }
 }

@@ -3,7 +3,6 @@ import React from 'react';
 import { Dropzone } from '.';
 
 function Template(args) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Dropzone {...args} />;
 }
 

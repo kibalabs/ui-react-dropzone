@@ -1,0 +1,53 @@
+@layer kiba-structure {
+  .KibaDropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    &.fullWidth {
+      width: 100%;
+    }
+    &.fullHeight {
+      height: 100%;
+    }
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+@layer kiba-theme {
+  .KibaDropzone {
+    padding: var(--kiba-dropzone-padding, 1em 2em);
+    background-color: var(--kiba-dropzone-background-color, rgba(0, 0, 0, 0.01));
+    border-width: var(--kiba-dropzone-border-width, 1px);
+    border-color: var(--kiba-dropzone-border-color, rgba(0, 0, 0, 0.25));
+    border-style: var(--kiba-dropzone-border-style, dashed);
+    border-radius: var(--kiba-dropzone-border-radius, 0.5em);
+    color: var(--kiba-dropzone-color, rgba(0, 0, 0, 0.5));
+    text-align: center;
+    &:hover {
+      border-color: var(--kiba-dropzone-hover-border-color, rgba(0, 0, 0, 0.5));
+      color: var(--kiba-dropzone-hover-color, rgba(0, 0, 0, 0.5));
+    }
+    &:active {
+      border-color: var(--kiba-dropzone-active-border-color, rgba(0, 0, 0, 0.75));
+      color: var(--kiba-dropzone-active-color, rgba(0, 0, 0, 0.5));
+    }
+    &:focus {
+      outline: var(--kiba-dropzone-focus-outline, 2px solid #4b6cb7);
+      outline-offset: var(--kiba-dropzone-focus-outline-offset, 2px);
+    }
+    &.fileHovering {
+      border-color: var(--kiba-dropzone-file-hover-border-color, rgba(0, 0, 0, 0.75));
+      color: var(--kiba-dropzone-file-hover-color, rgba(0, 0, 0, 0.75));
+    }
+    &.disabled {
+      background-color: var(--kiba-dropzone-disabled-background-color, rgba(128, 128, 128, 0.5));
+      color: var(--kiba-dropzone-disabled-color, rgba(128, 128, 128, 1));
+    }
+  }
+}
