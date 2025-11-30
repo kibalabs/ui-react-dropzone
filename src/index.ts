@@ -1,3 +1,3 @@
-export * from './theme';
-export * from './buildTheme';
+import './styles.scss';
+
 export * from './component';
