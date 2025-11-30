@@ -16,8 +16,17 @@
     "*.scss",
     "*.css"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css",
+    "./styles.scss": "./src/styles.scss"
+  },
   "files": [
-    "dist/*"
+    "dist/*",
+    "src/styles.scss"
   ],
   "dependencies": {
     "@kibalabs/core": "^0.6.3-next.4",
