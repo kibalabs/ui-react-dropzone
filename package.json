@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@kibalabs/build": "0.13.3-next.13",
-    "@kibalabs/ui-react": "0.11.3-next.18",
+    "@kibalabs/ui-react": "^0.11.3-next.22",
     "@storybook/addon-docs": "10.1.2",
     "@storybook/react-vite": "10.1.2",
     "@types/react": "19.2.7",
