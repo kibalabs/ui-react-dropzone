@@ -50,6 +50,7 @@ export function Dropzone(props: IDropzoneProps): React.ReactElement {
       style={style}
     >
       <input
+        ref={(inputProps as React.InputHTMLAttributes<HTMLInputElement> & { ref?: React.Ref<HTMLInputElement> }).ref}
         accept={inputProps.accept}
         multiple={inputProps.multiple}
         type={inputProps.type}
