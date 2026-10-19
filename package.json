@@ -34,7 +34,7 @@
     "react-dropzone": "^14.4.1"
   },
   "devDependencies": {
-    "@kibalabs/build": "0.14.1",
+    "@kibalabs/build": "0.14.2-next.10",
     "@kibalabs/ui-react": "^0.12.1-next.9",
     "@storybook/addon-docs": "10.6.1",
     "@storybook/react-vite": "10.6.1",
