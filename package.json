@@ -30,12 +30,12 @@
   ],
   "dependencies": {
     "@kibalabs/core": "^0.7.2-next.7",
-    "@kibalabs/core-react": "^0.10.1-next.4",
+    "@kibalabs/core-react": "^0.10.1-next.5",
     "react-dropzone": "^14.4.1"
   },
   "devDependencies": {
     "@kibalabs/build": "0.14.2-next.10",
-    "@kibalabs/ui-react": "^0.12.1-next.9",
+    "@kibalabs/ui-react": "^0.12.1-next.10",
     "@storybook/addon-docs": "10.6.1",
     "@storybook/react-vite": "10.6.1",
     "@types/react": "19.3.0",
