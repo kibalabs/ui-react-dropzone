@@ -31,7 +31,7 @@
   "dependencies": {
     "@kibalabs/core": "^0.7.2-next.9",
     "@kibalabs/core-react": "^0.10.1-next.7",
-    "react-dropzone": "^14.4.1"
+    "react-dropzone": "^20.1.4"
   },
   "devDependencies": {
     "@kibalabs/build": "0.14.2-next.14",
